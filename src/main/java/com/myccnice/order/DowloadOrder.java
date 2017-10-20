@@ -55,10 +55,10 @@ public class DowloadOrder {
             ListOrdersResponse response = client.listOrders(request);
             ListOrdersResult orderList = response.getListOrdersResult();
             List<Order> oList = orderList.getOrders();
-            /*String nextToken = orderList.getNextToken(); // 获取下一页的令牌
+            String nextToken = orderList.getNextToken(); // 获取下一页的令牌
             if (nextToken != null) {
                 oList.addAll(listOrdersByNextToken(client, nextToken));
-            }*/
+            }
             for(Order order : oList) {
                 listOrderItems(client, order.getAmazonOrderId());
             }
