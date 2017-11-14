@@ -54,6 +54,9 @@ public class DowloadOrder {
             request.setMaxResultsPerPage(2);
             ListOrdersResponse response = client.listOrders(request);
             ListOrdersResult orderList = response.getListOrdersResult();
+            System.out.println(orderList.toXML());
+            System.out.println("toXMLFragment");
+            System.out.println(orderList.toXMLFragment());
             List<Order> oList = orderList.getOrders();
             String nextToken = orderList.getNextToken(); // 获取下一页的令牌
             if (nextToken != null) {
